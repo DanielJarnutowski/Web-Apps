@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dan</h1>
+
+<%= link_to 'go to Website page', websites_path %>
+<p></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dans.each do |dan| %>
+      <tr>
+        <td><%= dan.login %></td>
+        <td><%= link_to 'Show', dan %></td>
+        <td><%= link_to 'Edit', edit_dan_path(dan) %></td>
+        <td><%= link_to 'Destroy', dan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dan', new_dan_path %>

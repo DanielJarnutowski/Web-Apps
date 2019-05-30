@@ -1,0 +1,22 @@
+<%= form_with(model: dan, local: true) do |form| %>
+  <% if dan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dan.errors.count, "error") %> prohibited this dan from being saved:</h2>
+
+      <ul>
+      <% dan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :login %>
+    <%= form.text_field :login, id: :dan_login %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

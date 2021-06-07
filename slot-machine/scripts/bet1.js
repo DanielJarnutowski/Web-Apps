@@ -44,7 +44,26 @@ if(	document.getElementById("lemontag").src === document.getElementById("cherryt
 	MoneyValue = MoneyValue + (13 * BetValue); // claculates proper winnings
     money.value =MoneyValue;
     setTimeout(()=>{ 
-	alert("You win");//sets time delay for alert message
+		if(BetValue ==1)
+		{
+		swal({
+			title: "Congragulations!",
+			text: "You won " + BetValue + " dollar",
+			icon: "success",
+			button: "Keep Playing"
+		  });
+		    }
+			else
+			{
+		  swal({
+			title: "Congragulations!",
+			text: "You won " + BetValue +" dollars",
+			icon: "success",
+			button: "Keep playing"
+		  });
+		}
+
+	//sets time delay for alert message
 				   },100)    
    }	
 										    }
